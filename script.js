@@ -172,7 +172,6 @@ function toggleMusic() {
         tip.classList.add('err');
       });
   } else {
-  } else {
     audio.pause();
     button.classList.remove('playing');
     button.textContent = '🎵';
