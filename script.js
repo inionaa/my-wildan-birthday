@@ -164,9 +164,14 @@ function toggleMusic() {
         tip.classList.add('hidden');
         tip.classList.remove('err');
       })
-      .catch(function (error) {
-        console.log("Gagal memutar audio:", error);
+      .catch(function () {
+        // File musik tidak ketemu
+        tip.textContent = 'File musik tidak ditemukan.\nTaruh di audio/musik.mp3';
+        tip.style.whiteSpace = 'pre-line';
+        tip.classList.remove('hidden');
+        tip.classList.add('err');
       });
+  } else {
   } else {
     audio.pause();
     button.classList.remove('playing');
